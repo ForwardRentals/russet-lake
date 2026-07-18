@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Russet Lake — A Field Guide to Garibaldi's Rust-Coloured Lake, BC</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A field guide to Russet Lake in Garibaldi Provincial Park behind Whistler — the rust-tinted lake under Fissile Peak, the Musical Bumps high route versus the Singing Pass valley trail, and the Kees and Claire Hut.">
+<link rel="canonical" href="https://russetlake.com/">
+<meta property="og:url" content="https://russetlake.com/">
+<meta property="og:title" content="Russet Lake — A Field Guide to Garibaldi's Rust-Coloured Lake, BC">
+<meta property="og:description" content="The rust-tinted lake under Fissile Peak, the two classic ways up, and the Kees and Claire Hut. An honest field guide.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Rust-washed paper — the whole page leans into the name */
+    --paper: #f6efe7;
+    --paper-rust: #f1e4d6;
+    --paper-deep: #ead9c6;
+    --glacier: #fbf8f3;
+    --ink: #221a14;
+    --ink-soft: #3e332a;
+    --ink-mute: #7d6f61;
+    --rule: #ddcdba;
+    --rule-strong: #c4ae94;
+    --rust: #9a4520;
+    --rust-deep: #7b3517;
+    --slate: #5c5e5e;
+    --slate-deep: #43474a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--rust); color: var(--glacier); }
+
+  a { color: inherit; text-decoration: none; }
+  .ul { border-bottom: 1px solid var(--rule-strong); transition: border-color .2s; }
+  .ul:hover { border-bottom-color: var(--rust); }
+
+  h1, h2, h3 {
+    font-family: "Fraunces", "Times New Roman", serif;
+    font-weight: 400;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  h1 { font-size: clamp(3rem, 8vw, 5.6rem); letter-spacing: -0.03em; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+  h3 { font-size: 1.25rem; font-weight: 500; line-height: 1.3; }
+  p { margin: 0 0 1.1rem; color: var(--ink-soft); font-size: 1.04rem; line-height: 1.72; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+  .narrow { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .eyebrow {
+    display: flex; align-items: center; gap: 1rem;
+    font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase;
+    font-weight: 600; color: var(--rust);
+    margin-bottom: 1.1rem;
+  }
+  .eyebrow::after { content: ""; height: 1px; background: var(--rule-strong); flex: 0 0 56px; }
+
+  /* ---------- NAV ---------- */
+  nav.top {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(246,239,231,0.92);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .inner {
+    max-width: 1120px; margin: 0 auto;
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+  .wordmark { font-family: "Fraunces", serif; font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1.1; }
+  .wordmark small {
+    display: block; font-family: "Inter", sans-serif; font-weight: 500;
+    font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ink-mute); margin-top: 0.25rem;
+  }
+  nav.top .links { display: flex; gap: 1.6rem; }
+  nav.top .links a {
+    font-size: 0.73rem; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 500; color: var(--ink-soft);
+  }
+  nav.top .links a:hover { color: var(--rust); }
+  @media (max-width: 800px) { nav.top .links { display: none; } }
+
+  /* ---------- HERO ---------- */
+  header.hero { border-bottom: 1px solid var(--rule); background: var(--glacier); }
+  .hero-scene { display: block; width: 100%; height: auto; }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead { padding: 3.5rem 0 3rem; }
+  .vol-line {
+    font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink-mute);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem;
+    margin-bottom: 1.6rem;
+  }
+  .vol-line b { color: var(--rust); font-weight: 600; }
+  .vol-line .tick { width: 5px; height: 5px; background: var(--rule-strong); transform: rotate(45deg); }
+  .deck {
+    font-family: "Fraunces", serif; font-style: italic; font-weight: 400;
+    font-size: clamp(1.2rem, 2.4vw, 1.55rem); line-height: 1.45;
+    color: var(--ink-soft); max-width: 46ch;
+    margin: 1.4rem 0 0; letter-spacing: -0.008em;
+  }
+  .coord-ribbon {
+    margin-top: 2.4rem;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    display: grid; grid-template-columns: repeat(5, auto);
+    justify-content: space-between; gap: 1rem 2rem;
+    padding: 0.9rem 0;
+    font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-mute);
+  }
+  .coord-ribbon span b { display: block; font-family: "Fraunces", serif; font-style: normal; font-size: 1.02rem; letter-spacing: 0; color: var(--ink); font-weight: 500; }
+  @media (max-width: 760px) { .coord-ribbon { grid-template-columns: repeat(2, auto); } }
+
+  /* ---------- QUICK TAKE ---------- */
+  section.quicktake { padding: 0 0 5.5rem; }
+  .qt-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--rule-strong);
+    background: var(--paper-rust);
+  }
+  .qt-grid > div {
+    padding: 1.5rem 1.4rem;
+    border-right: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .qt-grid > div:nth-child(3n) { border-right: none; }
+  .qt-grid > div:nth-child(n+4) { border-bottom: none; }
+  @media (max-width: 700px) {
+    .qt-grid { grid-template-columns: 1fr 1fr; }
+    .qt-grid > div { border-right: 1px solid var(--rule-strong) !important; border-bottom: 1px solid var(--rule-strong) !important; }
+    .qt-grid > div:nth-child(2n) { border-right: none !important; }
+    .qt-grid > div:nth-child(n+5) { border-bottom: none !important; }
+  }
+  .qt-grid .k { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--rust); margin-bottom: 0.45rem; }
+  .qt-grid .v { font-family: "Fraunces", serif; font-size: 1.25rem; color: var(--ink); font-weight: 500; letter-spacing: -0.01em; line-height: 1.25; }
+  .qt-grid .s { font-size: 0.82rem; color: var(--ink-mute); margin-top: 0.3rem; line-height: 1.45; }
+
+  /* ---------- ESSAY ---------- */
+  section.essay { padding: 6rem 0; border-top: 1px solid var(--rule); }
+  .essay .lede::first-letter {
+    font-family: "Fraunces", serif;
+    font-size: 4.6rem; font-weight: 400;
+    float: left; line-height: 0.78;
+    padding: 0.12em 0.14em 0 0;
+    color: var(--rust);
+  }
+  .pull {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    font-family: "Fraunces", serif; font-style: italic; font-weight: 400;
+    font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.4;
+    color: var(--rust-deep); letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  /* ---------- TWO WAYS UP (signature motif) ---------- */
+  section.routes { padding: 6.5rem 0; background: var(--paper-rust); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .routes-head { max-width: 640px; margin-bottom: 3rem; }
+  .routes-head p { margin-top: 1rem; }
+  .route-cols {
+    display: grid; grid-template-columns: 1fr 1px 1fr;
+    gap: 0 3rem; align-items: start;
+  }
+  .route-divider { background: var(--rule-strong); align-self: stretch; }
+  @media (max-width: 860px) {
+    .route-cols { grid-template-columns: 1fr; gap: 3rem; }
+    .route-divider { height: 1px; align-self: auto; }
+  }
+  .route h3 {
+    font-size: clamp(1.45rem, 2.4vw, 1.8rem);
+    margin-bottom: 0.4rem;
+  }
+  .route .tag {
+    font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 1rem;
+  }
+  .route.high .tag { color: var(--rust); }
+  .route.valley .tag { color: var(--slate-deep); }
+  .route .facts {
+    list-style: none; margin: 1.4rem 0 1.6rem; padding: 0;
+  }
+  .route .facts li {
+    display: flex; justify-content: space-between; gap: 1rem;
+    padding: 0.6rem 0; border-top: 1px solid var(--rule-strong);
+    font-size: 0.92rem;
+  }
+  .route .facts li:last-child { border-bottom: 1px solid var(--rule-strong); }
+  .route .facts .fk { color: var(--ink-mute); }
+  .route .facts .fv { font-family: "Fraunces", serif; font-weight: 500; color: var(--ink); text-align: right; }
+  .route p { font-size: 0.99rem; }
+  .verdict {
+    margin-top: 3rem; padding: 1.4rem 1.6rem;
+    background: var(--glacier);
+    border-left: 3px solid var(--rust);
+    font-size: 0.97rem; color: var(--ink-soft);
+  }
+  .verdict b { font-family: "Fraunces", serif; font-style: italic; font-weight: 500; color: var(--rust-deep); }
+
+  /* ---------- HUT ---------- */
+  section.hut { padding: 6rem 0; }
+  .hut-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 4rem; align-items: start; }
+  @media (max-width: 860px) { .hut-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .hut-card {
+    background: var(--slate-deep); color: var(--glacier);
+    padding: 2rem 1.8rem;
+  }
+  .hut-card h4 {
+    font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.24em;
+    text-transform: uppercase; font-weight: 600; color: #cfa98a;
+    margin: 0 0 1.2rem;
+  }
+  .hut-card ul { list-style: none; margin: 0; padding: 0; }
+  .hut-card ul li {
+    padding: 0.7rem 0; border-top: 1px solid rgba(251,248,243,0.16);
+    font-size: 0.93rem; line-height: 1.55; color: #e8e2d8;
+  }
+  .hut-card ul li:first-child { border-top: none; padding-top: 0; }
+  .hut-card ul li b { color: var(--glacier); font-weight: 600; }
+  .hut-card a { color: var(--glacier); border-bottom: 1px solid rgba(251,248,243,0.4); }
+  .hut-card a:hover { border-bottom-color: var(--glacier); }
+
+  /* ---------- REMEMBER LIST ---------- */
+  section.remember { padding: 6rem 0; border-top: 1px solid var(--rule); }
+  ol.mem {
+    list-style: none; counter-reset: mem; margin: 2.4rem 0 0; padding: 0;
+    columns: 2; column-gap: 4rem;
+  }
+  @media (max-width: 760px) { ol.mem { columns: 1; } }
+  ol.mem li {
+    counter-increment: mem;
+    break-inside: avoid;
+    padding: 0 0 1.6rem 3.1rem;
+    position: relative;
+  }
+  ol.mem li::before {
+    content: counter(mem, decimal-leading-zero);
+    position: absolute; left: 0; top: 0.12em;
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 1.25rem; color: var(--rust);
+  }
+  ol.mem li b { display: block; font-weight: 600; font-size: 0.98rem; color: var(--ink); margin-bottom: 0.2rem; }
+  ol.mem li span { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6; }
+
+  /* ---------- SEASONS ---------- */
+  section.seasons { padding: 6rem 0; border-top: 1px solid var(--rule); background: var(--paper-rust); }
+  table.season {
+    width: 100%; border-collapse: collapse; margin-top: 2.2rem;
+    font-size: 0.95rem;
+  }
+  table.season th {
+    text-align: left; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600; color: var(--rust); padding: 0 1rem 0.7rem 0;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  table.season td {
+    padding: 1rem 1rem 1rem 0; vertical-align: top;
+    border-bottom: 1px solid var(--rule-strong);
+    color: var(--ink-soft); line-height: 1.55;
+  }
+  table.season td.when { font-family: "Fraunces", serif; font-style: italic; font-size: 1.05rem; color: var(--ink); white-space: nowrap; }
+  table.season td.verd { font-weight: 600; color: var(--ink); font-size: 0.85rem; letter-spacing: 0.04em; }
+  @media (max-width: 700px) {
+    table.season, table.season tbody, table.season tr, table.season td { display: block; }
+    table.season thead { display: none; }
+    table.season tr { padding: 1rem 0; border-bottom: 1px solid var(--rule-strong); }
+    table.season td { border: none; padding: 0.2rem 0; }
+    table.season td.when { white-space: normal; }
+  }
+
+  /* ---------- HONEST ---------- */
+  section.honest { padding: 6rem 0; }
+  section.honest em { color: var(--rust-deep); }
+
+  /* ---------- SUPPORT / FUNNEL ---------- */
+  section.support { padding: 6rem 0; border-top: 1px solid var(--rule); background: var(--glacier); }
+  .support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 2.2rem; }
+  @media (max-width: 760px) { .support-grid { grid-template-columns: 1fr; } }
+  .support-card {
+    border: 1px solid var(--rule-strong); background: var(--paper);
+    padding: 1.7rem 1.6rem;
+    display: flex; flex-direction: column;
+  }
+  .support-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .support-card p { font-size: 0.94rem; margin-bottom: 1.2rem; }
+  .support-card .go {
+    margin-top: auto; align-self: flex-start;
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
+    color: var(--rust); border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 2px; transition: all .2s;
+  }
+  .support-card .go:hover { color: var(--rust-deep); border-bottom-color: var(--rust-deep); }
+  .rest-day {
+    margin-top: 2rem; font-size: 0.97rem; color: var(--ink-soft);
+    padding-top: 1.6rem; border-top: 1px solid var(--rule);
+  }
+
+  /* ---------- FAQ ---------- */
+  section.faq { padding: 6rem 0; border-top: 1px solid var(--rule); }
+  .faq-list { margin-top: 2.2rem; border-top: 1px solid var(--rule-strong); }
+  details.q { border-bottom: 1px solid var(--rule-strong); }
+  details.q > summary {
+    list-style: none; cursor: pointer; outline: none;
+    padding: 1.4rem 2.2rem 1.4rem 0;
+    font-family: "Fraunces", serif; font-weight: 500;
+    font-size: 1.18rem; line-height: 1.35; letter-spacing: -0.01em;
+    color: var(--ink); position: relative;
+  }
+  details.q > summary::-webkit-details-marker { display: none; }
+  details.q > summary::after {
+    content: "+"; position: absolute; right: 0.2rem; top: 50%;
+    transform: translateY(-50%);
+    font-family: "Inter", sans-serif; font-weight: 300; font-size: 1.5rem;
+    color: var(--rust); transition: transform .2s;
+  }
+  details.q[open] > summary::after { transform: translateY(-50%) rotate(45deg); }
+  details.q > summary:hover { color: var(--rust-deep); }
+  details.q .a { padding: 0 0 1.6rem; }
+  details.q .a p { font-size: 0.99rem; }
+  details.q .a a { border-bottom: 1px solid var(--rule-strong); }
+  details.q .a a:hover { border-bottom-color: var(--rust); }
+
+  /* ---------- FOOTER ---------- */
+  footer.foot { border-top: 1px solid var(--rule-strong); background: var(--paper-deep); padding: 3.5rem 0 2.5rem; }
+  .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; }
+  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot h4 { font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rust); font-weight: 600; margin: 0 0 0.9rem; }
+  .foot p { font-size: 0.9rem; margin: 0; }
+  .foot ul { list-style: none; margin: 0; padding: 0; }
+  .foot ul li { margin-bottom: 0.45rem; font-size: 0.9rem; }
+  .foot ul li a:hover { color: var(--rust-deep); }
+  .colophon {
+    margin-top: 2.8rem; padding-top: 1.4rem; border-top: 1px solid var(--rule-strong);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;
+    font-size: 0.76rem; color: var(--ink-mute);
+  }
+  .colophon em { font-family: "Fraunces", serif; }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="top">
+  <div class="inner">
+    <a class="wordmark" href="https://seatoskytrails.com/">Sea to Sky Trails<small>Part of the Sea to Sky Trails &middot; Vol.&nbsp;II</small></a>
+    <div class="links">
+      <a href="#quicktake">Quick take</a>
+      <a href="#routes">The two ways up</a>
+      <a href="#hut">The hut</a>
+      <a href="#seasons">Seasons</a>
+      <a href="#faq">Questions</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO SCENE ===================== -->
+<header class="hero" aria-label="Illustration of Fissile Peak's orange pyramid above the rust-brown water of Russet Lake, with the angular Kees and Claire Hut on the moraine">
+  <svg class="hero-scene" viewBox="0 0 1200 540" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e9e4dc"/>
+        <stop offset="0.55" stop-color="#efe3d3"/>
+        <stop offset="1" stop-color="#f0ddc6"/>
+      </linearGradient>
+      <linearGradient id="fissile" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#c96f35"/>
+        <stop offset="0.6" stop-color="#a94f22"/>
+        <stop offset="1" stop-color="#8c4020"/>
+      </linearGradient>
+      <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#8e4a26"/>
+        <stop offset="1" stop-color="#6e3417"/>
+      </linearGradient>
+    </defs>
+
+    <!-- sky -->
+    <rect x="0" y="0" width="1200" height="540" fill="url(#sky)"/>
+    <!-- pale sun, high and cold -->
+    <circle cx="905" cy="86" r="30" fill="#fbf8f3" opacity="0.9"/>
+    <circle cx="905" cy="86" r="44" fill="#fbf8f3" opacity="0.25"/>
+
+    <!-- far grey ridgeline (Spearhead) -->
+    <path d="M0 258 L90 226 L170 244 L268 196 L340 228 L430 208 L520 236 L640 214 L760 242 L870 210 L980 240 L1080 218 L1200 246 L1200 540 L0 540 Z" fill="#a6a3a0"/>
+    <path d="M0 258 L90 226 L170 244 L268 196 L340 228 L430 208 L520 236 L640 214 L760 242 L870 210 L980 240 L1080 218 L1200 246" fill="none" stroke="#8f8c89" stroke-width="1.4"/>
+    <!-- hanging snow/glacier remnants on the far ridge -->
+    <path d="M252 208 L268 196 L286 210 L272 218 Z" fill="#fbf8f3" opacity="0.9"/>
+    <path d="M852 220 L870 210 L892 224 L868 230 Z" fill="#fbf8f3" opacity="0.85"/>
+    <path d="M414 216 L430 208 L448 220 L428 226 Z" fill="#fbf8f3" opacity="0.8"/>
+
+    <!-- mid grey shoulder ridges -->
+    <path d="M0 330 L120 288 L230 318 L330 284 L420 316 L500 300 L560 322 L1200 322 L1200 540 L0 540 Z" fill="#83817e"/>
+    <path d="M700 322 L810 286 L930 318 L1030 292 L1130 320 L1200 306 L1200 540 L700 540 Z" fill="#79777a"/>
+    <path d="M96 300 L120 288 L148 304 L118 310 Z" fill="#fbf8f3" opacity="0.75"/>
+    <path d="M786 296 L810 286 L838 302 L806 308 Z" fill="#fbf8f3" opacity="0.75"/>
+
+    <!-- FISSILE: the orange pyramid, centre-right -->
+    <path d="M430 470 L618 118 L802 470 Z" fill="url(#fissile)"/>
+    <!-- shadowed east face -->
+    <path d="M618 118 L802 470 L640 470 Z" fill="#7b3517" opacity="0.55"/>
+    <!-- loose-rock rib lines -->
+    <g fill="none" stroke="#6e3014" stroke-width="1.4" opacity="0.5" stroke-linecap="round">
+      <path d="M618 130 L560 300"/>
+      <path d="M618 130 L672 320"/>
+      <path d="M600 190 L536 380"/>
+      <path d="M636 200 L706 400"/>
+      <path d="M586 250 L510 434"/>
+    </g>
+    <!-- summit snow sliver + lingering couloir snow -->
+    <path d="M618 118 L644 168 L630 172 L636 190 L618 178 L604 192 L608 168 L596 164 Z" fill="#fbf8f3"/>
+    <path d="M596 210 L604 262 L588 244 Z" fill="#fbf8f3" opacity="0.85"/>
+    <path d="M648 236 L660 292 L640 262 Z" fill="#fbf8f3" opacity="0.8"/>
+
+    <!-- moraine bench beneath the peak -->
+    <path d="M0 452 C140 428 300 440 470 448 C640 456 760 442 900 450 C1030 457 1120 448 1200 452 L1200 540 L0 540 Z" fill="#8a7a68"/>
+    <path d="M0 452 C140 428 300 440 470 448 C640 456 760 442 900 450 C1030 457 1120 448 1200 452" fill="none" stroke="#6f6152" stroke-width="1.4" opacity="0.7"/>
+
+    <!-- RUSSET LAKE: small rust-brown tarn at the foot of the pyramid -->
+    <ellipse cx="590" cy="497" rx="230" ry="34" fill="url(#lake)"/>
+    <ellipse cx="590" cy="497" rx="230" ry="34" fill="none" stroke="#5c2a10" stroke-width="1.4" opacity="0.6"/>
+    <!-- shoreline mineral stain -->
+    <ellipse cx="590" cy="497" rx="246" ry="39" fill="none" stroke="#a3552a" stroke-width="2.4" opacity="0.35"/>
+    <!-- water lines -->
+    <g fill="none">
+      <path d="M430 494 q22 -4 44 0 t44 0 t44 0" stroke="#a65a2e" stroke-width="1.4" opacity="0.7"/>
+      <path d="M500 506 q22 -4 44 0 t44 0 t44 0 t44 0" stroke="#a65a2e" stroke-width="1.4" opacity="0.5"/>
+      <path d="M560 486 q20 -3 40 0 t40 0" stroke="#d8a074" stroke-width="1.4" opacity="0.6"/>
+    </g>
+    <!-- reflection of the pyramid, broken -->
+    <path d="M560 480 L590 528 L620 480 Z" fill="#a24d22" opacity="0.35"/>
+
+    <!-- KEES AND CLAIRE HUT: modern angular form on the moraine, left of the lake -->
+    <g>
+      <!-- main volume with mono-pitch roof -->
+      <path d="M256 470 L256 432 L352 418 L352 470 Z" fill="#4a4a48"/>
+      <!-- roof plane -->
+      <path d="M248 434 L360 418 L352 410 L244 426 Z" fill="#2f2f2e"/>
+      <!-- glacier-white end wall -->
+      <path d="M256 470 L256 432 L282 428 L282 470 Z" fill="#e8e2d8"/>
+      <!-- window band -->
+      <rect x="292" y="436" width="52" height="12" fill="#d8a074" opacity="0.9"/>
+      <rect x="292" y="436" width="52" height="12" fill="none" stroke="#2f2f2e" stroke-width="1.4"/>
+      <!-- door -->
+      <rect x="264" y="446" width="11" height="24" fill="#2f2f2e"/>
+      <!-- deck posts -->
+      <path d="M256 470 L352 470" stroke="#2f2f2e" stroke-width="1.4"/>
+    </g>
+
+    <!-- heather + boulders foreground -->
+    <path d="M0 540 L0 512 C90 500 180 516 270 510 C390 502 480 522 600 540 Z" fill="#7a5a3c"/>
+    <path d="M1200 540 L1200 508 C1110 500 1020 518 930 512 C840 507 760 524 690 540 Z" fill="#6f4e33"/>
+    <g fill="#8f8c89">
+      <ellipse cx="150" cy="516" rx="16" ry="7"/>
+      <ellipse cx="1054" cy="516" rx="20" ry="8"/>
+      <ellipse cx="880" cy="524" rx="12" ry="5"/>
+    </g>
+    <!-- sparse heather strokes -->
+    <g stroke="#5c3a1e" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.7">
+      <path d="M110 512 l0 -8 M116 512 l3 -7 M104 512 l-3 -7"/>
+      <path d="M960 516 l0 -8 M966 516 l3 -7 M954 516 l-3 -7"/>
+      <path d="M420 522 l0 -7 M426 522 l3 -6"/>
+    </g>
+  </svg>
+</header>
+
+<!-- ===================== MASTHEAD ===================== -->
+<div class="wrap masthead">
+  <div class="vol-line">
+    <b>Sea to Sky Trails</b><span class="tick"></span><span>Vol.&nbsp;II, No.&nbsp;13</span><span class="tick"></span><span>Garibaldi Provincial Park</span>
+  </div>
+  <h1>Russet Lake</h1>
+  <p class="deck">A small lake the colour of old iron, sitting under the orange pyramid of Fissile Peak &mdash; the far side of Whistler&rsquo;s skyline, and the quietest famous view in Garibaldi Park.</p>
+
+  <div class="coord-ribbon" aria-label="Technical metadata">
+    <span><b>&approx;50.03&deg; N, 122.83&deg; W</b>Spearhead area, approx.</span>
+    <span><b>&approx;1,900 m</b>lake elevation, approx.</span>
+    <span><b>19&ndash;21 km</b>round trip, route-dependent</span>
+    <span><b>2 routes</b>high traverse or valley trail</span>
+    <span><b>No dogs</b>Garibaldi Park rule</span>
+  </div>
+</div>
+
+<!-- ===================== QUICK TAKE ===================== -->
+<section class="quicktake" id="quicktake">
+  <div class="wrap">
+    <div class="qt-grid">
+      <div>
+        <div class="k">The place</div>
+        <div class="v">A rust-tinted tarn</div>
+        <div class="s">Small alpine lake at the foot of Fissile Peak, in the Spearhead area behind Whistler.</div>
+      </div>
+      <div>
+        <div class="k">The colour</div>
+        <div class="v">Actually russet</div>
+        <div class="s">The name is literal &mdash; mineral-stained water and orange rock, not marketing.</div>
+      </div>
+      <div>
+        <div class="k">The commitment</div>
+        <div class="v">A full alpine day</div>
+        <div class="s">On the order of 19&ndash;21 km round trip depending on lifts and route. Start early.</div>
+      </div>
+      <div>
+        <div class="k">The overnight</div>
+        <div class="v">Kees and Claire Hut</div>
+        <div class="s">Modern hut at the lake, run by the Spearhead Huts Society. Reservation-only.</div>
+      </div>
+      <div>
+        <div class="k">The season</div>
+        <div class="v">Snow into July</div>
+        <div class="s">True alpine. Weather turns fast; the shoulder seasons are not casual.</div>
+      </div>
+      <div>
+        <div class="k">The rule</div>
+        <div class="v">No dogs</div>
+        <div class="s">Garibaldi Provincial Park. No exceptions, and rangers do check.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESSAY ===================== -->
+<section class="essay">
+  <div class="narrow">
+    <div class="eyebrow">Field Notes</div>
+    <h2>The lake behind the skyline.</h2>
+    <p class="lede" style="margin-top:1.6rem;">Most people who look at Whistler&rsquo;s mountains are looking at the front of them. Russet Lake is what&rsquo;s behind &mdash; tucked into the Spearhead area of Garibaldi Provincial Park, on the far side of the ridgelines you see from the village. Getting there means either climbing over that skyline or walking a long valley around it, and both ways end at the same strange little scene: a small lake stained the colour of rusted steel, sitting directly below Fissile Peak&rsquo;s improbable orange pyramid.</p>
+    <p>Fissile is the reason the photographs look unreal. Almost everything else up here is Coast Mountain grey &mdash; granite, glacier, heather &mdash; and then this one peak rises out of it in shades of burnt orange, loose and layered and completely out of costume. The lake below picks up the same mineral palette. On a still evening the whole basin goes copper.</p>
+
+    <div class="pull">&ldquo;Almost everything up here is Coast Mountain grey &mdash; and then one peak rises out of it in burnt orange, completely out of costume.&rdquo;</div>
+
+    <p>What changed Russet Lake from a hard-core objective into a place ordinary strong hikers plan weekends around is the hut. The Kees and Claire Hut, opened by the Spearhead Huts Society, is a genuinely modern piece of backcountry architecture at the lake &mdash; and it operates on reservations, not luck. Book well ahead, read their rules, and treat the booking like a flight: the alpine does not do standby.</p>
+    <p>The rest of the scene has stayed honest. There is no easy way in. Snow lingers on the route into July most years, the weather can swing from shirtsleeves to whiteout in an hour, and once the lifts close the exit gets longer. This is one of the most beautiful places in the park precisely because it charges admission in effort.</p>
+  </div>
+</section>
+
+<!-- ===================== TWO WAYS UP ===================== -->
+<section class="routes" id="routes">
+  <div class="wrap">
+    <div class="routes-head">
+      <div class="eyebrow">The Approach</div>
+      <h2>Two ways up, one decision.</h2>
+      <p>Every Russet Lake trip starts with the same choice. Ride the lift and walk the sky, or skip the lift and walk the forest. Same lake at the end &mdash; very different days.</p>
+    </div>
+
+    <div class="route-cols">
+      <div class="route high">
+        <div class="tag">Option one &middot; over the top</div>
+        <h3>The Musical Bumps high route</h3>
+        <ul class="facts">
+          <li><span class="fk">Start</span><span class="fv">Whistler Village gondola</span></li>
+          <li><span class="fk">Line</span><span class="fv">Piccolo &rarr; Flute &rarr; Oboe</span></li>
+          <li><span class="fk">Round trip</span><span class="fv">&approx;19&ndash;21 km, lift-dependent</span></li>
+          <li><span class="fk">Character</span><span class="fv">Ridgeline, all views</span></li>
+          <li><span class="fk">Catch</span><span class="fv">Lift tickets &amp; lift hours</span></li>
+        </ul>
+        <p>Ride the gondola out of Whistler Village, then traverse the Musical Bumps &mdash; the rolling summits of Piccolo, Flute and Oboe &mdash; on a high line with Fissile in front of you for most of the afternoon. It&rsquo;s the classic version of this hike for a reason: you spend the day in the alpine instead of climbing to it.</p>
+        <p>The fine print is the lift system. Tickets, operating dates and last-download times are Whistler Blackcomb&rsquo;s to set, and they shape the whole day &mdash; check current hours before committing, and know what your exit looks like if you miss the last ride down.</p>
+      </div>
+
+      <div class="route-divider" role="presentation"></div>
+
+      <div class="route valley">
+        <div class="tag">Option two &middot; around the side</div>
+        <h3>The Singing Pass valley trail</h3>
+        <ul class="facts">
+          <li><span class="fk">Start</span><span class="fv">Whistler Village, on foot</span></li>
+          <li><span class="fk">Line</span><span class="fv">Fitzsimmons valley &rarr; Singing Pass</span></li>
+          <li><span class="fk">Round trip</span><span class="fv">Longer &mdash; a big day</span></li>
+          <li><span class="fk">Character</span><span class="fv">Forest grind, then payoff</span></li>
+          <li><span class="fk">Catch</span><span class="fv">Check current trail status</span></li>
+        </ul>
+        <p>The old-school approach: walk out of the village and up the Fitzsimmons valley to Singing Pass, then on to the lake. No lift ticket, no lift hours, no dependence on anyone&rsquo;s operating calendar &mdash; just a long, green, patient forest climb that saves all of its views for the end.</p>
+        <p>One honest caveat: this corridor has a history of washouts and reroutes, and its condition has varied year to year. Check BC Parks and current trail reports before you build a plan around it &mdash; especially early season.</p>
+      </div>
+    </div>
+
+    <div class="verdict"><b>The local pattern:</b> up and over the Musical Bumps while the lifts are running, with the valley trail as the no-ticket alternative &mdash; and many hut-trippers ride up one day and walk the valley out the next. Whichever you choose, this is alpine terrain: carry layers, check the forecast the morning of, and expect snow patches on the route well into July.</div>
+  </div>
+</section>
+
+<!-- ===================== THE HUT ===================== -->
+<section class="hut" id="hut">
+  <div class="wrap">
+    <div class="hut-grid">
+      <div>
+        <div class="eyebrow">The Overnight</div>
+        <h2>The Kees and Claire Hut.</h2>
+        <p style="margin-top:1.4rem;">The hut at Russet Lake is not the leaky A-frame of backcountry legend. The Kees and Claire Hut is a modern, purpose-built overnight hut operated by the Spearhead Huts Society &mdash; angular, insulated, and designed for exactly this basin. It turned Russet Lake from a punishing single-day out-and-back into one of the most civilised alpine overnights in the corridor.</p>
+        <p>The operative word is <em>reservation</em>. The hut runs on bookings through the Spearhead Huts Society, demand is heavy, and showing up without one is not a plan. Fees, group rules and what-to-bring details live on their site and change season to season &mdash; treat their page as the source of truth.</p>
+        <p>Prefer canvas? There are tent pads in the area managed through BC Parks &mdash; check their current reservation and fee setup before you go, as the specifics have shifted over the years.</p>
+      </div>
+      <aside class="hut-card">
+        <h4>Hut, in brief</h4>
+        <ul>
+          <li><b>Who runs it:</b> the Spearhead Huts Society &mdash; book directly with them, well ahead.</li>
+          <li><b>Walk-ins:</b> effectively no. Reservation-only; check their site for fees and rules.</li>
+          <li><b>Camping:</b> tent pads nearby via BC Parks &mdash; verify current details before relying on them.</li>
+          <li><b>Winter role:</b> gateway to the Spearhead Traverse ski route. Avalanche terrain &mdash; guided or avalanche-trained parties only.</li>
+          <li><b>Dogs:</b> none. Garibaldi Park rule, hut or no hut.</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT STAYS WITH YOU ===================== -->
+<section class="remember">
+  <div class="wrap">
+    <div class="eyebrow">What Stays With You</div>
+    <h2>Six things people talk about afterward.</h2>
+    <ol class="mem">
+      <li><b>Fissile turning colour</b><span>The pyramid goes from dull brick at noon to glowing copper at last light. Hut guests get the whole show.</span></li>
+      <li><b>The ridge walk itself</b><span>On the high route, the trail is the destination &mdash; hours of open alpine with sightlines across the park.</span></li>
+      <li><b>The water&rsquo;s odd tint</b><span>Rust-brown shallows against grey rock. It reads wrong in photos, in the best way.</span></li>
+      <li><b>How fast weather moves</b><span>Blue morning, whiteout afternoon. Everyone who goes often has a story; carry the layers.</span></li>
+      <li><b>The hut&rsquo;s comfort shock</b><span>Walking a full alpine day and then sitting somewhere warm, dry and architected feels almost illegal.</span></li>
+      <li><b>Snow in July</b><span>Lingering snowfields on the route surprise first-timers most years. Footwear accordingly.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== SEASONS ===================== -->
+<section class="seasons" id="seasons">
+  <div class="narrow">
+    <div class="eyebrow">When to Go</div>
+    <h2>A short window, honestly stated.</h2>
+    <table class="season">
+      <thead>
+        <tr><th>Window</th><th>What you get</th><th>Call</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="when">Nov &ndash; May</td>
+          <td>Deep winter. The basin becomes the gateway to the Spearhead Traverse ski route &mdash; serious avalanche terrain. Guided or avalanche-trained parties only.</td>
+          <td class="verd">Experts only</td>
+        </tr>
+        <tr>
+          <td class="when">June &ndash; mid-July</td>
+          <td>Transition. Snow lingers on the route into July most years; navigation and footing are real work. Check conditions and lift opening dates.</td>
+          <td class="verd">Go prepared</td>
+        </tr>
+        <tr>
+          <td class="when">Mid-July &ndash; early Sept</td>
+          <td>The window. Trails mostly clear, wildflowers on the Bumps, hut season in full swing, lifts running. Book everything early.</td>
+          <td class="verd">Prime</td>
+        </tr>
+        <tr>
+          <td class="when">Sept &ndash; Oct</td>
+          <td>Quiet and golden, but lift hours shrink and the first storms arrive without much notice. Watch the forecast and your exit plan.</td>
+          <td class="verd">Locals&rsquo; pick</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== HONEST NOTE ===================== -->
+<section class="honest">
+  <div class="narrow">
+    <div class="eyebrow">Honest Note</div>
+    <h2>What the postcards leave out.</h2>
+    <p style="margin-top:1.4rem;">This is a real alpine objective wearing a resort&rsquo;s front door. <em>The gondola shortens the climb, not the day</em> &mdash; you are still committing to a route on the order of twenty kilometres, at elevation, in terrain where the weather rewrites plans by the hour. Every season, comfortable summer hikers get caught out here by wind, fog or a snowfield that wasn&rsquo;t in the photos.</p>
+    <p>Fissile itself is best admired from the shore. Its slopes above the lake are loose, rubbly scramble terrain, and most visitors &mdash; sensibly &mdash; stop at the lake. If you&rsquo;re thinking about going higher, that&rsquo;s a mountaineering decision, not a hiking one; know what you&rsquo;re doing or go with someone who does.</p>
+    <p>And the logistics are unforgiving in small ways: lift tickets and hours are Whistler Blackcomb&rsquo;s call, the hut is reservation-only through the Spearhead Huts Society, the valley trail&rsquo;s condition should be verified before you lean on it, and dogs are not allowed anywhere in Garibaldi Park. None of this is meant to talk you out of it. It&rsquo;s meant to get you there in the version of the trip you&rsquo;ll want to repeat.</p>
+  </div>
+</section>
+
+<!-- ===================== TRAILHEAD SUPPORT ===================== -->
+<section class="support" id="support">
+  <div class="wrap">
+    <div class="eyebrow">Trailhead Support</div>
+    <h2>This one&rsquo;s a hike, not a paddle.</h2>
+    <p style="max-width:640px; margin-top:1rem;">Nobody is portaging a canoe over the Musical Bumps. But the same local outfit behind our lake guides runs delivery and trip support out of Squamish, and it&rsquo;s the practical safety net for a Russet Lake weekend.</p>
+
+    <div class="support-grid">
+      <div class="support-card">
+        <h3>Gear &amp; trip support</h3>
+        <p>Local delivery and rental support for Sea to Sky trips &mdash; useful when your plans outgrow what fit in the car.</p>
+        <a class="go" href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">See what&rsquo;s available</a>
+      </div>
+      <div class="support-card">
+        <h3>Plan the rest of the corridor</h3>
+        <p>Russet Lake pairs naturally with a Squamish day on either side. The full set of field guides lives at the hub.</p>
+        <a class="go" href="https://seatoskytrails.com/" target="_blank" rel="noopener">Browse Sea to Sky Trails</a>
+      </div>
+    </div>
+
+    <p class="rest-day">And for the day after: legs that have done twenty alpine kilometres want flat water, not more vertical. A slow recovery paddle on the Squamish valley&rsquo;s calm channels &mdash; canoes seat up to three, no elevation gain whatsoever &mdash; is the classic bookend, through <a class="ul" href="https://squamishcanoerental.com/">Squamish Canoe Rental</a> or the drift down the <a class="ul" href="https://riverofgoldendreams.ca/">River of Golden Dreams</a>.</p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq">
+  <div class="narrow">
+    <div class="eyebrow">Questions &amp; Answers</div>
+    <h2>What people actually ask about Russet Lake.</h2>
+
+    <div class="faq-list">
+
+      <details class="q">
+        <summary>Why is Russet Lake that colour?</summary>
+        <div class="a">
+          <p>The name is descriptive. The lake sits directly under Fissile Peak, whose orange, mineral-rich rock stains the basin &mdash; so the small lake reads rust-brown to copper rather than the turquoise people expect from Garibaldi Park. It&rsquo;s most striking in low evening light, which is a good argument for the hut.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>How long is the hike to Russet Lake?</summary>
+        <div class="a">
+          <p>Plan for a full day. Via the Whistler Village gondola and the Musical Bumps high route (Piccolo&ndash;Flute&ndash;Oboe), the round trip is on the order of 19&ndash;21 km depending on lifts and exact routing. The Singing Pass valley trail from the village is longer still, since you&rsquo;re walking the elevation the gondola would have given you. Either way, start early and check lift hours or trail status the morning you go.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Musical Bumps or Singing Pass &mdash; which route should I take?</summary>
+        <div class="a">
+          <p>If the lifts are running and the budget allows, most people take the Musical Bumps high route: you spend the day in the alpine with big views the whole way. The Singing Pass valley trail is the no-lift alternative &mdash; a long forest grind with the scenery saved for the end. Note that the valley corridor has had washout and reroute history, so confirm its current condition with BC Parks before relying on it.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Do I need a reservation for the Kees and Claire Hut?</summary>
+        <div class="a">
+          <p>Yes. The hut is run by the Spearhead Huts Society and operates reservation-only &mdash; book well ahead, especially for summer weekends, and get fees and rules from their site directly. If you&rsquo;d rather camp, there are tent pads in the area managed through BC Parks; verify the current booking setup before you go, as the specifics have changed over time.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Can I bring my dog?</summary>
+        <div class="a">
+          <p>No. Dogs are not permitted in Garibaldi Provincial Park, and that includes the entire Russet Lake area. It&rsquo;s one of the park&rsquo;s firmest rules &mdash; plan a dog-sitter, not a workaround.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Is there still snow in summer?</summary>
+        <div class="a">
+          <p>Usually, yes. Snow lingers on the route into July most years, and lingering snowfields can persist beyond that in bigger snow years. This is genuine alpine terrain &mdash; weather turns fast, and a warm village morning tells you very little about conditions on the Bumps. Carry real layers and check the forecast and trail reports the day you go.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Can I climb Fissile Peak from the lake?</summary>
+        <div class="a">
+          <p>Most visitors stop at the lake, and that&rsquo;s the right call for hikers. Fissile&rsquo;s slopes above Russet Lake are loose, rubbly scramble terrain &mdash; the kind of ground where route-finding and rockfall judgment matter. If you&rsquo;re considering it, treat it as a mountaineering objective with the appropriate experience or a guide, not as an extension of the hike.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>What about winter &mdash; can I ski to Russet Lake?</summary>
+        <div class="a">
+          <p>In winter and spring the basin becomes the gateway to the Spearhead Traverse, one of the corridor&rsquo;s classic ski routes &mdash; and it is committed avalanche terrain. This is for avalanche-trained parties with full gear, or guided groups; it is not a snowshoe outing. If that&rsquo;s your world, the hut makes a superb base. If it isn&rsquo;t yet, hire a guide or wait for July.</p>
+          <p>For gentler winter-free ideas nearby, see the other Garibaldi entries in the <a href="https://seatoskytrails.com/">Sea to Sky Trails</a> &mdash; <a href="https://panoramaridgewhistler.com/">Panorama Ridge</a> and <a href="https://cheakamuslake.com/">Cheakamus Lake</a> among them.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>This Guide</h4>
+        <p>Russet Lake is entry No.&nbsp;13 in Volume&nbsp;II of the Sea to Sky Trails &mdash; a slow-built, reader-funded field guide to the lakes, passes and huts of the Coast Mountains. Written from the fact sheet and the field, not the feed.</p>
+        <p style="margin-top:0.9rem;">Russet Lake lies in the shared territory of the Sḵwx̱wú7mesh (Squamish) and L̓il̓wat7úl (Líl̓wat) Nations.</p>
+      </div>
+      <div>
+        <h4>More Field Guides</h4>
+        <ul>
+          <li><a class="ul" href="https://panoramaridgewhistler.com/">Panorama Ridge</a></li>
+          <li><a class="ul" href="https://wedgemountlake.com/">Wedgemount Lake</a></li>
+          <li><a class="ul" href="https://cheakamuslake.com/">Cheakamus Lake</a></li>
+          <li><a class="ul" href="https://joffrelake.com/">Joffre Lakes</a></li>
+          <li><a class="ul" href="https://riverofgoldendreams.ca/">River of Golden Dreams</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Trip Support</h4>
+        <ul>
+          <li><a class="ul" href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Gear &amp; delivery support</a></li>
+          <li><a class="ul" href="https://squamishcanoerental.com/">Squamish Canoe Rental</a></li>
+          <li><a class="ul" href="https://seatoskytrails.com/">Sea to Sky Trails hub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="colophon">
+      <div><em>Sea to Sky Trails</em> &middot; Vol.&nbsp;II, No.&nbsp;13 &middot; <a href="https://seatoskytrails.com/">Part of the Sea to Sky Trails</a></div>
+      <div>Set in Fraunces &amp; Inter. Reader-funded.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== STRUCTURED DATA ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Russet Lake",
+  "description": "A small rust-tinted alpine lake at the foot of Fissile Peak in the Spearhead area of Garibaldi Provincial Park, behind Whistler, BC. Reached via the Musical Bumps high route from the Whistler Village gondola or the Singing Pass valley trail; home of the reservation-only Kees and Claire Hut run by the Spearhead Huts Society.",
+  "url": "https://russetlake.com/",
+  "isAccessibleForFree": true,
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.03,
+    "longitude": -122.83
+  },
+  "touristType": ["Hikers", "Backcountry skiers", "Overnight hut trippers"],
+  "publicAccess": true,
+  "containedInPlace": {
+    "@type": "Place",
+    "name": "Garibaldi Provincial Park"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is Russet Lake that colour?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The name is descriptive. The lake sits directly under Fissile Peak, whose orange mineral-rich rock stains the basin, so the small lake reads rust-brown to copper rather than the turquoise people expect from Garibaldi Park. It is most striking in low evening light." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long is the hike to Russet Lake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Plan for a full day. Via the Whistler Village gondola and the Musical Bumps high route (Piccolo, Flute, Oboe), the round trip is on the order of 19 to 21 km depending on lifts and routing. The Singing Pass valley trail from the village is longer still. Start early and check lift hours or trail status the morning you go." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I take the Musical Bumps or the Singing Pass trail?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If the lifts are running, most people take the Musical Bumps high route for a full day in the alpine with big views. The Singing Pass valley trail is the no-lift alternative, a long forest climb with the scenery at the end. The valley corridor has had washout and reroute history, so confirm current conditions with BC Parks before relying on it." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a reservation for the Kees and Claire Hut?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The hut at Russet Lake is run by the Spearhead Huts Society and is reservation-only. Book well ahead and get current fees and rules from their site. Tent pads in the area are managed through BC Parks; verify the current booking setup before you go." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bring my dog to Russet Lake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Dogs are not permitted anywhere in Garibaldi Provincial Park, including the Russet Lake area." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there still snow at Russet Lake in summer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usually. Snow lingers on the route into July most years and can persist longer in big snow years. This is genuine alpine terrain where weather turns fast, so carry layers and check the forecast and trail reports the day you go." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I climb Fissile Peak from Russet Lake?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most visitors stop at the lake. Fissile's slopes above Russet Lake are loose scramble terrain where route-finding and rockfall judgment matter. Treat it as a mountaineering objective with appropriate experience or a guide, not an extension of the hike." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I ski to Russet Lake in winter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In winter and spring the basin is the gateway to the Spearhead Traverse ski route, which is committed avalanche terrain. It is for avalanche-trained parties with full gear or guided groups only, not a snowshoe outing." }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
